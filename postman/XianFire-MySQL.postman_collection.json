@@ -1,0 +1,31 @@
+{
+  "info": {
+    "name": "XianFire MySQL Data Modeling",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://127.0.0.1:8000" },
+    { "key": "studentId", "value": "1" },
+    { "key": "teacherId", "value": "1" },
+    { "key": "courseId", "value": "1" },
+    { "key": "enrollmentId", "value": "1" },
+    { "key": "departmentId", "value": "1" }
+  ],
+  "item": [
+    { "name": "POST students", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\"studentNumber\":\"2026-new-001\",\"firstName\":\"Juan\",\"lastName\":\"Dela Cruz\",\"email\":\"juan@example.com\",\"program\":\"BSIT\",\"yearLevel\":1}" }, "url": "{{baseUrl}}/api/students" } },
+    { "name": "GET students", "request": { "method": "GET", "url": "{{baseUrl}}/api/students" } },
+    { "name": "GET student by id", "request": { "method": "GET", "url": "{{baseUrl}}/api/students/{{studentId}}" } },
+    { "name": "POST teachers", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\"employeeNumber\":\"EMP-NEW-001\",\"firstName\":\"Juan\",\"lastName\":\"Dela Cruz\",\"email\":\"teacher@example.com\",\"department\":\"Information Technology\",\"specialization\":\"Database Systems\"}" }, "url": "{{baseUrl}}/api/teachers" } },
+    { "name": "GET teachers", "request": { "method": "GET", "url": "{{baseUrl}}/api/teachers" } },
+    { "name": "GET teacher by id", "request": { "method": "GET", "url": "{{baseUrl}}/api/teachers/{{teacherId}}" } },
+    { "name": "POST courses", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\"courseCode\":\"IT-NEW-001\",\"title\":\"Database Management\",\"description\":\"Relational database fundamentals\",\"units\":3,\"department\":\"Information Technology\",\"semester\":\"First Semester\"}" }, "url": "{{baseUrl}}/api/courses" } },
+    { "name": "GET courses", "request": { "method": "GET", "url": "{{baseUrl}}/api/courses" } },
+    { "name": "GET course by id", "request": { "method": "GET", "url": "{{baseUrl}}/api/courses/{{courseId}}" } },
+    { "name": "POST enrollments", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\"studentNumber\":\"2026-new-001\",\"courseCode\":\"IT-NEW-001\",\"schoolYear\":\"2026-2027\",\"semester\":\"First Semester\",\"status\":\"Enrolled\",\"grade\":null}" }, "url": "{{baseUrl}}/api/enrollments" } },
+    { "name": "GET enrollments", "request": { "method": "GET", "url": "{{baseUrl}}/api/enrollments" } },
+    { "name": "GET enrollment by id", "request": { "method": "GET", "url": "{{baseUrl}}/api/enrollments/{{enrollmentId}}" } },
+    { "name": "POST departments", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\"departmentCode\":\"DCS-NEW-001\",\"name\":\"Computer Studies\",\"dean\":\"Dr. Ana Garcia\",\"building\":\"Science Building\",\"email\":\"computer@example.com\",\"phone\":\"09171234567\"}" }, "url": "{{baseUrl}}/api/departments" } },
+    { "name": "GET departments", "request": { "method": "GET", "url": "{{baseUrl}}/api/departments" } },
+    { "name": "GET department by id", "request": { "method": "GET", "url": "{{baseUrl}}/api/departments/{{departmentId}}" } }
+  ]
+}
